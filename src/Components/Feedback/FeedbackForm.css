@@ -1,0 +1,73 @@
+.home{
+    background: url(../../assets/images/location.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+ }
+ .home__overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100dvh + 20px);
+    width: 100%;
+    background-color: #0005;
+ }
+ .home .center{
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ 
+ .home .center form{
+    background-color: var(--white);
+    padding: 2rem;
+    box-shadow: var(--box-shodow);
+    width: 55rem;
+    z-index: 1;
+    border-radius: 10px;
+ }
+ 
+ .home .center form h3{
+    padding-bottom: 1rem;
+    text-align: center;
+    color: var(--black);
+    text-transform: capitalize;
+    font-size: 2.5rem;
+ }
+ 
+ .home .center form .flex{
+    display: flex;
+    gap:1rem;
+    flex-wrap: wrap;
+ }
+ 
+ .home .center form .box{
+    flex: 1 1 20rem;
+ }
+ 
+ .home .center form .box .input{
+    width: 100%;
+    border: var(--border);
+    padding: 1.4rem;
+    color: var(--black);
+    font-size: 1.8rem;
+    margin: 1rem 0;
+ }
+ .home .center form .box .input:hover {
+    outline: 1px solid var(--main-color);
+    border: 0;
+ }
+ 
+ .home .center form .box p{
+    color: var(--light-color);
+    font-size: 1.7rem;
+    padding-top: 1rem;
+ }
+ 
+ .home .center form .box p span{
+    color: var(--main-color);
+ }
+ select option.choice {
+    background: var(--main-color);
+    color: var(--white);
+ }
