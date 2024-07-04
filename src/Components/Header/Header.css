@@ -1,7 +1,7 @@
 .header{
     position: sticky;
     top: 0; left: 0; right: 0;
-    z-index: 1000;
+    z-index: 1;
     box-shadow: var(--box-shodow);
  }
  
@@ -41,34 +41,43 @@
  
  .header .navbar .flex ul{
     list-style: none;
+    border-radius: 5px;
  }
  
  .header .navbar .flex ul li{
     float: left;
     position: relative;
+    border-radius: 5px;
  }
  
  .header .navbar .flex ul li a{
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 1.2rem 2rem;
     font-size: 1.8rem;
     color: var(--black);
     background-color: var(--white);
+    transition: all .2s ease;
+ }
+ .header .navbar .flex .post {
+   border-radius: 5px;
  }
  
  .header .navbar .flex ul li a:hover{
     background-color: var(--main-color);
     color: var(--white);
  }
- 
- .header .navbar .flex ul li a i{
-    margin-left: 1rem;
+
+ .header .navbar .flex ul li a .saved,
+ .header .navbar .flex ul li a .icon{
+    margin-left: 1rem; 
  }
  
  .header .navbar .flex ul li ul{
     position: absolute;
     width: 17rem;
-    left: 0;
+    left: 0; 
  }
  
  .header .navbar .flex ul li ul li{
@@ -77,14 +86,30 @@
  
  .header .navbar .flex ul li ul li a{
     display: none;
+   
  }
  
  .header .navbar .flex ul li:hover ul li a{
     display: block;
  }
- 
- #menu-btn{
-    font-size: 2.5rem;
+
+ #menu-btn{ 
+   font-size: 2rem;
     color: var(--black);
+    cursor: pointer;
     display: none;
  }
+
+ #menu-btn > svg{
+   width: 100%;
+ }
+
+.icon{
+   font-size: 1.3rem;
+}
+ @media (max-width:768px){
+ 
+   #menu-btn{
+      display: inline-block;
+   }
+}

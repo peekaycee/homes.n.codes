@@ -1,29 +1,9 @@
-.home{
-    background: url(../../assets/images/location.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
- }
- .home__overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: calc(100dvh + 20px);
-    width: 100%;
-    background-color: #0005;
- }
- .home .center{
-    min-height: 85vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
- 
- .home .center form{
+.home .center form{
     background-color: var(--white);
     padding: 2rem;
     box-shadow: var(--box-shodow);
     width: 55rem;
-    z-index: 1;
+    z-index: 0;
     border-radius: 10px;
  }
  
@@ -43,15 +23,18 @@
  
  .home .center form .box{
     flex: 1 1 20rem;
+    height: 115px;
  }
  
  .home .center form .box .input{
     width: 100%;
     border: var(--border);
     padding: 1.4rem;
+    border-radius: 5px;
     color: var(--black);
     font-size: 1.8rem;
     margin: 1rem 0;
+    transition: all .2s ease;
  }
  .home .center form .box .input:hover {
     outline: 1px solid var(--main-color);

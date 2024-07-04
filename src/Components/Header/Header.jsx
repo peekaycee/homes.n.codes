@@ -1,5 +1,8 @@
 import './Header.css'
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faAngleDown, faPaperPlane, faHouse, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   return (
@@ -7,11 +10,11 @@ const Header = () => {
       <nav className="navbar nav-1">
         <section className="flex">
           <Link to="/" className="logo">
-            <i className="fas fa-house"></i>HNC
+          <FontAwesomeIcon icon={faHouse}/> HNC
           </Link>
           <ul>
             <li>
-              <Link to="#">post property<i className="fas fa-paper-plane"></i></Link>
+              <Link to="post" className='post'>post property <FontAwesomeIcon icon={faPaperPlane} /></Link>
             </li>
           </ul>
         </section>
@@ -19,43 +22,48 @@ const Header = () => {
 
       <nav className="navbar nav-2">
         <section className="flex">
-          <div id="menu-btn" className="fas fa-bars"></div>
+          <div id="menu-btn" className="fas fa-bars"><FontAwesomeIcon icon={faBars} className='barsIcon'/></div>
 
           <div className="menu">
             <ul>
               <li>
-                <Link to="#">buy<i className="fas fa-angle-down"></i></Link>
+                <Link to="listings">buy <FontAwesomeIcon icon={faAngleDown} className='icon'/></Link>
+                <ul className='dropdown'>
+                  <li><Link to="listings/lands">Land</Link></li>
+                  <li><Link to="listings/houses">houses</Link></li>
+                  <li><Link to="listings/flats">flats</Link></li>
+                  <li><Link to="listings/shops">shops</Link></li>
+                  <li><Link to="listings/cars">cars</Link></li>
+                  <li><Link to="listings/others">Others</Link></li>
+                  {/* <li><Link to="listings/furnished-houses">furnished</Link></li> */}
+                </ul>
+              </li>
+              {/* *********************Think Over Sales of properties (2 sales buttons)***************** */}
+              <li>
+                <Link to="#">sell <FontAwesomeIcon icon={faAngleDown} className='icon'/></Link>  
                 <ul>
-                  <li><Link to="#">house</Link></li>
-                  <li><Link to="#">flat</Link></li>
-                  <li><Link to="#">shop</Link></li>
-                  <li><Link to="#">car</Link></li>
-                  <li><Link to="#">furnished</Link></li>
+                  <li><Link to="#">sell property</Link></li>
+                  <li><Link to="dashboard">dashboard</Link></li>
                 </ul>
               </li>
               <li>
-                <Link to="#">sell<i className="fas fa-angle-down"></i></Link>
-                <ul>
-                  <li><Link to="#">post property</Link></li>
-                  <li><Link to="#">dashboard</Link></li>
+                <Link to="listings">rent <FontAwesomeIcon icon={faAngleDown} className='icon'/></Link>
+                <ul className='dropdown'>
+                  <li><Link to="listings/lands">land</Link></li>
+                  <li><Link to="listings/houses">house</Link></li>
+                  <li><Link to="listings/flats">flat</Link></li>
+                  <li><Link to="listings/shops">shop</Link></li>
+                  <li><Link to="listings/cars">car</Link></li>
+                  <li><Link to="listings/outlets">outlet</Link></li>
+                  <li><Link to="listings/others">Others</Link></li>
                 </ul>
               </li>
               <li>
-                <Link to="#">rent</Link>
+                <Link to="contact">help <FontAwesomeIcon icon={faAngleDown} className='icon'/></Link>
                 <ul>
-                  <li><Link to="#">house</Link></li>
-                  <li><Link to="#">flat</Link></li>
-                  <li><Link to="#">shop</Link></li>
-                  <li><Link to="#">outlet</Link></li>
-                  <li><Link to="#">car</Link></li>
-                </ul>
-              </li>
-              <li>
-                <Link to="#">help<i className="fas fa-angle-down"></i></Link>
-                <ul>
-                  <li><Link to="about.html">about us</Link></li>
-                  <li><Link to="contact.html">contact us</Link></li>
-                  <li><Link to="contact.html#faq">FAQ</Link></li>
+                  <li><Link to="about">about us</Link></li>
+                  <li><Link to="contact">contact us</Link></li>
+                  <li><Link to="contact#faq">FAQ</Link></li>
                 </ul>
               </li>
             </ul>
@@ -63,13 +71,13 @@ const Header = () => {
 
           <ul>
             <li>
-              <Link to="#">saved <i className="far fa-heart"></i></Link>
+              <Link to="saved">saved <FontAwesomeIcon icon={faHeart} className='saved'/></Link>
             </li>
             <li>
-              <Link to="#">account <i className="fas fa-angle-down"></i></Link>
+              <Link to="login">account <FontAwesomeIcon icon={faAngleDown} className='icon'/></Link>
               <ul>
-                <li><Link to="login.html">login</Link></li>
-                <li><Link to="register.html">register</Link></li>
+                <li><Link to="login">login</Link></li>
+                <li><Link to="register">register</Link></li>
               </ul>
             </li>
           </ul>

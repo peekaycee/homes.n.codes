@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom"
 import FeedbackForm from "../../Components/Feedback/FeedbackForm"
 import LatestListings from "../../Components/LatestListings/LatestListings"
 import OurServices from "../../Components/OurServices/OurServices"
@@ -14,6 +15,7 @@ const Homepage = () => {
       </div>
       <OurServices />
       <LatestListings />
+      <Outlet />
     </main>
   )
 }

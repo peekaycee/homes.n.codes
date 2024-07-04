@@ -1,0 +1,21 @@
+.home{
+    background: url(../../assets/images/location.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+ }
+ .home__overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #0005;
+ }
+ .home .center{
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ 
