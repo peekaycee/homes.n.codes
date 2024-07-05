@@ -25,6 +25,7 @@ import {
   Others,
   Lands,
 } from './Components/common/index.common';
+
 function App() {
   return (
     <>
