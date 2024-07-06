@@ -1,9 +1,5 @@
 .footer{
     background-color: var(--black);
-    /* position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100% */
  }
  
  .footer .flex{
@@ -70,3 +66,40 @@
     padding: 0 0.5em;
     border-radius: 4px;
  }
+.addressIcon {
+   margin-right: 5px;
+}
+
+.socials{
+  margin-left: 10px;
+}
+
+/* address Icons */
+div:nth-child(1) > a:nth-child(2) > svg,
+div:nth-child(1) > a:nth-child(1) > svg{
+   color: #4fce5d;   
+}
+
+div:nth-child(1) > a:nth-child(3) > svg{
+   color: rgb(210, 141, 141);   
+}
+div:nth-child(1) > a:nth-child(4) > svg{
+   color: rgb(221, 221, 221);   
+}
+
+
+
+
+/* socials */
+div:nth-child(3) > a:nth-child(1) > svg{
+  color: #3b5998;
+}
+div:nth-child(3) > a:nth-child(2) > svg{
+  color: #00acee;
+}
+div:nth-child(3) > a:nth-child(3) > svg{
+  color: blue;
+}
+div:nth-child(3) > a:nth-child(4) > svg{
+  color: #f14843;
+}

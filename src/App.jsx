@@ -31,25 +31,24 @@ function App() {
     <>
       <Layout />
       <Routes>
-        <Route index path='/' element={<HomePage />} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/contact' element={<ContactPage />} />
-        <Route path='/listings' element={<Listings />}>
-          <Route path='/listings/houses' element={<Houses />} />
-          <Route path='/listings/flats' element={<Flats />} />
-          <Route path='/listings/lands' element={<Lands />} />
-          <Route path='/listings/shops' element={<Shops />} />
-          <Route path='/listings/cars' element={<Cars />} />
-          <Route path='/listings/others' element={<Others />} />
-          <Route path='/listings/outlets' element={<Outlets />} />
-        </Route>
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/saved' element={<SavedProperties />} />
-        <Route path='/view' element={<ViewProperties />} />
-        <Route path='/post' element={<Post />} />
-        <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/*' element={<ErrorPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/listings" element={<Listings />} />
+        <Route path="/listings/houses" element={<Houses />} />
+        <Route path="/listings/flats" element={<Flats />} />
+        <Route path="/listings/lands" element={<Lands />} />
+        <Route path="/listings/shops" element={<Shops />} />
+        <Route path="/listings/cars" element={<Cars />} />
+        <Route path="/listings/others" element={<Others />} />
+        <Route path="/listings/outlets" element={<Outlets />} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/saved" element={<SavedProperties />} />
+        <Route path="/view" element={<ViewProperties />} />
+        <Route path="/post" element={<Post />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
       <Footer />
       <Script />

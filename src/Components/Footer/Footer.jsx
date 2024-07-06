@@ -1,6 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Link } from 'react-router-dom'
+
 import './Footer.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 const Footer = () => {
   return (
@@ -8,19 +13,19 @@ const Footer = () => {
       <section className="flex">
         <div className="box">
           <Link to="tel:+2348064772024">
-            <i className="fas fa-phone"></i>
+            <FontAwesomeIcon icon={faPhone} className='addressIcon'/>
             <span>+234 806 477 2024</span>
           </Link>
           <Link to="tel:+2348102654290">
-            <i className="fas fa-phone"></i>
+            <FontAwesomeIcon icon={faPhone} className='addressIcon'/>
             <span>+234 810 265 4290</span>
           </Link>
           <Link to="mailto:homes.n.codes@gmail.com">
-            <i className="fas fa-envelope"></i>
+            <FontAwesomeIcon icon={faEnvelope} className='addressIcon'/>
             <span>homes.n.codes@gmail.com</span>
           </Link>
           <Link to="contact">
-            <i className="fas fa-map-marker-alt"></i>
+            <FontAwesomeIcon icon={faMapMarkerAlt} className='addressIcon'/>
             <span>Nigeria, Ajah, Lagos</span>
           </Link>
         </div>
@@ -44,19 +49,19 @@ const Footer = () => {
         <div className="box">
           <Link to="#">
             <span>Facebook</span>
-            <i className="fab fa-facebook-f"></i>
+            <FontAwesomeIcon icon={faFacebook} className='socials' id='facebook' />
           </Link>
           <Link to="#">
             <span>Twitter</span>
-            <i className="fab fa-twitter"></i>
+            <FontAwesomeIcon icon={faTwitter} className='socials'/>
           </Link>
           <Link to="#">
             <span>LinkedIn</span>
-            <i className="fab fa-linkedin"></i>
+            <FontAwesomeIcon icon={faLinkedin} className='socials'/>
           </Link>
           <Link to="#">
             <span>Instagram</span>
-            <i className="fab fa-instagram"></i>
+            <FontAwesomeIcon icon={faInstagram} className='socials'/>
           </Link>
         </div>
       </section>
