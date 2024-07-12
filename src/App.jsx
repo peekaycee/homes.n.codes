@@ -27,6 +27,7 @@ import {
 } from './Components/common/index.common';
 
 function App() {
+  
   return (
     <>
       <Layout />
@@ -34,14 +35,15 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/listings" element={<Listings />} />
-        <Route path="/listings/houses" element={<Houses />} />
-        <Route path="/listings/flats" element={<Flats />} />
-        <Route path="/listings/lands" element={<Lands />} />
-        <Route path="/listings/shops" element={<Shops />} />
-        <Route path="/listings/cars" element={<Cars />} />
-        <Route path="/listings/others" element={<Others />} />
-        <Route path="/listings/outlets" element={<Outlets />} />
+        <Route path="/listings" element={<Listings />}>
+          <Route path="houses" element={<Houses />} />
+          <Route path="flats" element={<Flats />} />
+          <Route path="lands" element={<Lands />} />
+          <Route path="shops" element={<Shops />} />
+          <Route path="cars" element={<Cars />} />
+          <Route path="others" element={<Others />} />
+          <Route path="outlets" element={<Outlets />} />
+        </Route>
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
         <Route path="/saved" element={<SavedProperties />} />

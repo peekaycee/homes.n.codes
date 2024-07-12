@@ -1,0 +1,104 @@
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: sticky;
+  top: 70px;
+  z-index: 1;
+  background-color: aqua;
+  color: #333;
+  font-weight: bold;
+}
+
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* For iOS smooth scrolling */
+   
+}
+
+.carousel-items {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  padding: 13px 30px;
+  min-width: 300px; /* Adjust as per your design */
+  font-size: 14px;
+}
+
+.navigation {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around; 
+}
+
+.nav-button-left {
+    position: absolute;
+    left: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  outline: none;
+}
+
+.nav-button-right {
+  position: absolute;
+  right: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  outline: none;
+}
+
+.view-all {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.view-all:hover {
+  background-color: #0056b3;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.carousel-controls button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  outline: none;
+  padding: 5px;
+}
+
+.carousel-controls button:hover {
+  color: #333; /* Change color on hover as per your design */
+}
+
+/* @media only screen and (max-width: 768px) {
+  .carousel-container {
+    top: 50px;
+  }
+  .nav-2{
+    display: none;
+  }
+  .carousel-item {
+    min-width: 100px; 
+  }
+} */

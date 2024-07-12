@@ -1,4 +1,4 @@
-import './Header.css'
+import './Header.css';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
@@ -10,7 +10,7 @@ const Header = () => {
       <nav className="navbar nav-1">
         <section className="flex">
           <Link to="/" className="logo">
-          <FontAwesomeIcon icon={faHouse}/> HNC
+            <FontAwesomeIcon icon={faHouse}/> HNC
           </Link>
           <ul>
             <li>
@@ -29,16 +29,14 @@ const Header = () => {
               <li>
                 <Link to="listings">buy <FontAwesomeIcon icon={faAngleDown} className='icon'/></Link>
                 <ul className='dropdown'>
-                  <li><Link to="listings/lands">Land</Link></li>
-                  <li><Link to="listings/houses">houses</Link></li>
-                  <li><Link to="listings/flats">flats</Link></li>
-                  <li><Link to="listings/shops">shops</Link></li>
-                  <li><Link to="listings/cars">cars</Link></li>
-                  <li><Link to="listings/others">Others</Link></li>
-                  {/* <li><Link to="listings/furnished-houses">furnished</Link></li> */}
+                  <li><Link to="/listings#land-listings">Land</Link></li>
+                  <li><Link to="/listings#house-listings">Houses</Link></li>
+                  <li><Link to="/listings#flats-listings">Flats</Link></li>
+                  <li><Link to="/listings#shop-listings">Shops</Link></li>
+                  <li><Link to="/listings#car-listings">Cars</Link></li>
+                  <li><Link to="/listings#other-listings">Others</Link></li>
                 </ul>
               </li>
-              {/* *********************Think Over Sales of properties (2 sales buttons)***************** */}
               <li>
                 <Link to="#">sell <FontAwesomeIcon icon={faAngleDown} className='icon'/></Link>  
                 <ul>
@@ -49,13 +47,13 @@ const Header = () => {
               <li>
                 <Link to="listings">rent <FontAwesomeIcon icon={faAngleDown} className='icon'/></Link>
                 <ul className='dropdown'>
-                  <li><Link to="listings/lands">land</Link></li>
-                  <li><Link to="listings/houses">house</Link></li>
-                  <li><Link to="listings/flats">flat</Link></li>
-                  <li><Link to="listings/shops">shop</Link></li>
-                  <li><Link to="listings/cars">car</Link></li>
-                  <li><Link to="listings/outlets">outlet</Link></li>
-                  <li><Link to="listings/others">Others</Link></li>
+                  <li><Link to="listings#land-listings">land</Link></li>
+                  <li><Link to="listings#house-listings">house</Link></li>
+                  <li><Link to="listings#flats-listings">flat</Link></li>
+                  <li><Link to="listings#shop-listings">shop</Link></li>
+                  <li><Link to="listings#car-listings">car</Link></li>
+                  <li><Link to="listings#outlet-listings">outlet</Link></li>
+                  <li><Link to="listings#other-listings">Others</Link></li>
                 </ul>
               </li>
               <li>
@@ -84,7 +82,7 @@ const Header = () => {
         </section>
       </nav>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;
