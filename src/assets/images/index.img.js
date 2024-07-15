@@ -22,3 +22,4 @@ export { default as Client5 } from './pic-5.png';
 export { default as Client6 } from './pic-6.png';
 export { default as AboutImage } from './about-img.svg';
 export { default as ContactImage } from './contact-img.svg';
+export { default as SearchIcon } from './search.svg';

@@ -30,8 +30,8 @@ const Cars = () => {
   }, []);
 
   return (   
-    <>
-    {isLinkClicked && <h1>Available Cars</h1>}
+    <section id='car-listings'>
+    {isLinkClicked && <h2>Available Cars</h2>}
     <section className='Car-listings'>
       <div className='box-container'>
         {Listings.map((listing, index) => (
@@ -95,7 +95,7 @@ const Cars = () => {
         </Link> */}
       </div>
     </section>
-    </>
+  </section>
   );
 };
 

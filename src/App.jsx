@@ -21,7 +21,7 @@ import {
   Houses,
   Cars,
   Shops,
-  Outlets,
+  Shortlets,
   Others,
   Lands,
 } from './Components/common/index.common';
@@ -42,7 +42,7 @@ function App() {
           <Route path="shops" element={<Shops />} />
           <Route path="cars" element={<Cars />} />
           <Route path="others" element={<Others />} />
-          <Route path="outlets" element={<Outlets />} />
+          <Route path="shortlets" element={<Shortlets />} />
         </Route>
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />

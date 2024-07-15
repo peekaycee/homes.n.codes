@@ -31,7 +31,7 @@ const Header = () => {
                 <ul className='dropdown'>
                   <li><Link to="/listings#land-listings">Land</Link></li>
                   <li><Link to="/listings#house-listings">Houses</Link></li>
-                  <li><Link to="/listings#flats-listings">Flats</Link></li>
+                  <li><Link to="/listings#flat-listings">Flats</Link></li>
                   <li><Link to="/listings#shop-listings">Shops</Link></li>
                   <li><Link to="/listings#car-listings">Cars</Link></li>
                   <li><Link to="/listings#other-listings">Others</Link></li>
@@ -49,10 +49,10 @@ const Header = () => {
                 <ul className='dropdown'>
                   <li><Link to="listings#land-listings">land</Link></li>
                   <li><Link to="listings#house-listings">house</Link></li>
-                  <li><Link to="listings#flats-listings">flat</Link></li>
+                  <li><Link to="listings#flat-listings">flat</Link></li>
                   <li><Link to="listings#shop-listings">shop</Link></li>
                   <li><Link to="listings#car-listings">car</Link></li>
-                  <li><Link to="listings#outlet-listings">outlet</Link></li>
+                  <li><Link to="listings#shortlet-listings">shortlet</Link></li>
                   <li><Link to="listings#other-listings">Others</Link></li>
                 </ul>
               </li>

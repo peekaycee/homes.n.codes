@@ -6,7 +6,7 @@ import {
   Houses,
   Lands,
   Others,
-  Outlets,
+  Shortlets,
   Shops,
   ViewProperty,
 } from '../../Components/common/index.common';
@@ -14,6 +14,7 @@ import './Listings.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import Hero from '../../Components/Hero/Hero';
+import { CarReels, HouseReels, LandReels, OtherReels, Reels, ShopReels, ShortletReels } from '../../assets/videos/videos';
 
 const Listings = () => {
   const [activeComponent, setActiveComponent] = useState(null);
@@ -156,8 +157,8 @@ const Listings = () => {
               </Link>
             </div>
             <div className='carousel-item'>
-              <Link to='#' onClick={() => handleSetActiveComponent('Outlets')}>
-                Outlets
+              <Link to='#' onClick={() => handleSetActiveComponent('Shortlets')}>
+              Shortlet
               </Link>
             </div>
             <div className='carousel-item'>
@@ -183,28 +184,24 @@ const Listings = () => {
       <div className='listings'>
         {activeComponent === null && (
           <>
-            <Hero variant={'Top Level'} search={'seach for property Type'} />
-            <Lands id='land-listings' />
-            <Houses
-              houseType1={'Bungalow'}
-              houseType2={'Duplexes'}
-              id='house-listings'
-            />
-            <Flats id='flat-listings' />
-            <Cars id='car-listings' />
-            <Shops id='shop-listings' />
-            <Outlets id='outlet-listings' />
-            <Others id='other-listings' />
+            <Hero variant={'Top Level'} search={'seach by property Type'} reels={Reels}/>
+            <Lands />
+            <Houses/>
+            <Flats />
+            <Cars />
+            <Shops />
+            <Shortlets />
+            <Others />
             <ViewProperty />
           </>
         )}
-       {activeComponent === 'Lands' && (<><Hero variant={'Land Properties'} search={'seach for land types'} /> <Lands /></>)}
-        {activeComponent === 'Houses' && (<><Hero variant={'Housing Properties'} search={'seach for house types'}  /><Houses/></>)}
-        {activeComponent === 'Flats' && (<><Hero variant={'Flats and Rented Properties'} search={'seach for flat types'} /><Flats /></>)}
-        {activeComponent === 'Cars' && (<><Hero variant={'Cars for Purchase'} search={'seach for car types'} /><Cars /></>)}
-        {activeComponent === 'Shops' && (<><Hero variant={'Rent Your Shops'} search={'seach for shop types'} /><Shops /></>)}
-        {activeComponent === 'Outlets' && (<><Hero  variant={'Outlets Locations'} search={'seach for outlet locations'} /><Outlets /></>)}
-        {activeComponent === 'Others' && (<><Hero variant={'Other Properties You May Need'} search={'seach for other properties'} /><Others /></>)}
+       {activeComponent === 'Lands' && (<><Hero variant={'Land Properties'} search={'seach by land types'} reels={LandReels}/> <Lands/></>)}
+        {activeComponent === 'Houses' && (<><Hero variant={'Housing Properties'} search={'seach by house types'} reels={HouseReels} /><Houses/></>)}
+        {activeComponent === 'Flats' && (<><Hero variant={'Flats and Rented Properties'} search={'seach by flat types'} reels={Reels}/><Flats /></>)}
+        {activeComponent === 'Cars' && (<><Hero variant={'Cars for Purchase'} search={'seach by car types'} reels={CarReels}/><Cars /></>)}
+        {activeComponent === 'Shops' && (<><Hero variant={'Rent Your Shops'} search={'seach by shop types'} reels={ShopReels}/><Shops /></>)}
+        {activeComponent === 'Shortlets' && (<><Hero  variant={'Shortlet Locations'} search={'seach by shortlet locations'} reels={ShortletReels}/><Shortlets /></>)}
+        {activeComponent === 'Others' && (<><Hero variant={'Other Properties You May Need'} search={'seach other types of properties'} reels={OtherReels} /><Others /></>)}
         {activeComponent === 'ViewProperty' && <ViewProperty />}
       </div>
       <div className='bottom-navigation'>

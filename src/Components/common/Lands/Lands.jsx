@@ -31,8 +31,8 @@ const Lands = () => {
   }, []);
 
   return (   
-    <>
-    {isLinkClicked && <h1>Available Lands</h1>}
+    <section  id='land-listings' >
+    {isLinkClicked && <h2>Available Lands</h2>}
     <section className='land-listings'>
       <div className='box-container'>
         {Listings.map((listing, index) => (
@@ -90,13 +90,13 @@ const Lands = () => {
           </div>
         ))}
       </div>
-      <div className='listings-added'>
-        {/* <Link to='/listings' className='inline-btn'>
+      {/* <div className='listings-added'>
+        <Link to='/listings' className='inline-btn'>
           View All
-        </Link> */}
-      </div>
+        </Link>
+      </div> */}
     </section>
-    </>
+    </section>
   );
 };
 

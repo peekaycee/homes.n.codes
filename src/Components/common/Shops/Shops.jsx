@@ -30,8 +30,8 @@ const Shops = () => {
   }, []);
 
   return (   
-    <>
-   {isLinkClicked && <h1>Available Shops</h1>}
+    <section  id='shop-listings' >
+   {isLinkClicked && <h2>Available Shops</h2>}
     <section className='Shop-listings'>
       <div className='box-container'>
         {Listings.map((listing, index) => (
@@ -95,7 +95,7 @@ const Shops = () => {
         </Link> */}
       </div>
     </section>
-    </>
+    </section>
   );
 };
 

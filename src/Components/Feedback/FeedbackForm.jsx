@@ -26,12 +26,12 @@ const FeedbackForm = () => {
               className='input'
               aria-required='true'>
               <option value='house'>house</option>
-              <option value='house'>outlets</option>
+              <option value='shortlet'>shortlet</option>
               <option value='flat'>flat</option>
               <option value='shop'>shop</option>
-              <option value='house'>car</option>
-              <option value='house'>filling station</option>
-              <option value='house'>warehouse (lease)</option>
+              <option value='car'>car</option>
+              <option value='filling station'>filling station</option>
+              <option value='warehouse'>warehouse (lease)</option>
             </select>
           </div>
           <div className='box'>

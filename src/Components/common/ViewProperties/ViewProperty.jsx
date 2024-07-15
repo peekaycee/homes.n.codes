@@ -1,7 +1,7 @@
 const ViewProperty = () => {
   return (
     <div>
-      <h1>ViewProperty</h1> 
+      <h2>ViewProperty</h2> 
     </div>
   )
 }

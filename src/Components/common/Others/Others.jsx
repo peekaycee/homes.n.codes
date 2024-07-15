@@ -30,8 +30,8 @@ const Others = () => {
   }, []);
 
   return (   
-    <>
-    {isLinkClicked && <h1>Other Properties</h1>}
+    <section  id='other-listings' >
+    {isLinkClicked && <h2>Other Properties</h2>}
     <section className='Other-listings'>
       <div className='box-container'>
         {Listings.map((listing, index) => (
@@ -95,7 +95,7 @@ const Others = () => {
         </Link> */}
       </div>
     </section>
-    </>
+    </section>
   );
 };
 

@@ -24,7 +24,7 @@ const Contact = () => {
   }, [location]);
   return (
     <>
-      <section className='contact'>
+      <section className='contact' id='top-section'>
         <div className='row'>
           <div className='image'>
             <img

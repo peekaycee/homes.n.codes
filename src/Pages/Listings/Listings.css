@@ -5,14 +5,10 @@
   position: sticky;
   top: 70px;
   z-index: 1;
-  background-color: aqua;
-  color: #333;
+  background: var(--light-bg);
   font-weight: bold;
 }
 
-.listings{
-  /* display: none; */
-}
 
 .carousel {
     display: flex;
@@ -20,6 +16,11 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch; /* For iOS smooth scrolling */
+}
+
+.carousel a{
+  color: var(--black);
+  font-weight: 500;
 }
 
 .carousel-items {
@@ -91,6 +92,12 @@
 
 .carousel-controls button:hover {
   color: #333; /* Change color on hover as per your design */
+}
+
+.listings h2{
+  color: var(--black);
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 /* @media only screen and (max-width: 768px) {

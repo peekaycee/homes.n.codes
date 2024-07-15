@@ -56,7 +56,7 @@ const Listings = [
         type: 'house',
         category: 'sale',
         image: House4,
-        description: 'short-outlets',
+        description: 'shortlets',
         location: 'Lekki-gardens, Ajah, Lagos',
         numberOfBedrooms: 1,
         numberOfBathrooms: 1,
