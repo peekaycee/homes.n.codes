@@ -31,15 +31,19 @@ const Listings = () => {
     }
   }, [location]);
 
-  useEffect(() => {
-    const ListHeader = document.querySelector('#root > div.listings > section.house-listings > section > h1');
-    const viewAllBtn = document.querySelector('.inline-btn');
+  // useEffect(() => {
+  //   const ListHeader = document.querySelector('#root > div.listings > section.house-listings > section > h1');
+  //   const viewAllBtn = document.querySelector('.inline-btn');
 
-    if (ListHeader) ListHeader.style.display = 'none';
-    if (viewAllBtn) viewAllBtn.style.display = 'none';
-  }, [activeComponent]);
+
+  //   if (ListHeader) ListHeader.style.display = 'none';
+  //   if (viewAllBtn) viewAllBtn.style.display = 'none';
+  // }, [activeComponent]);
 
   const handleSetActiveComponent = (componentName) => {
+
+    
+    
     setActiveComponent(componentName);
     if (componentName !== null) {
       const element = document.getElementById(`${componentName}-listings`);
@@ -95,17 +99,17 @@ const Listings = () => {
       header.style.zIndex = isScrolled ? '1' : '2';
     }
 
-    const handleClickOutside = (event) => {
-      if (nav2 && !nav2.contains(event.target)) {
-        restoreNavState();
-      }
-    };
+    // const handleClickOutside = (event) => {
+    //   if (nav2 && !nav2.contains(event.target)) {
+    //     // restoreNavState();
+    //   }
+    // };
 
-    document.addEventListener('click', handleClickOutside);
+    // document.addEventListener('click', handleClickOutside);
 
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
+    // return () => {
+    //   document.removeEventListener('click', handleClickOutside);
+    // };
   }, [isScrolled]);
 
   useEffect(() => {

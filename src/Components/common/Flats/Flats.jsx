@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Listings from './FlatsData'
 import '../../LatestListings/LatestListings.css'
 import { Link } from 'react-router-dom';
@@ -9,14 +10,32 @@ import {
 import { faMapMarkerAlt, faBed, faBath, faMaximize } from '@fortawesome/free-solid-svg-icons';
 
 
+// eslint-disable-next-line react/prop-types
 const Flats = () => {
-  return (
+  const [isLinkClicked, setIsLinkClicked] = useState(true);
+
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      const clickableLink = document.querySelector('#root > div.carousel-container > div > div > div:nth-child(4) > a');
+      if (clickableLink && clickableLink.contains(event.target)) {
+        setIsLinkClicked(false);
+      }
+    };
+
+    document.addEventListener('click', handleDocumentClick);
+
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
+
+  return (   
     <>
-    <h1>Available Flats</h1>
-    <section className='listings'>
+    {isLinkClicked && <h1>Available Flats</h1>}
+    <section className='flat-listings'>
       <div className='box-container'>
-        {Listings.map((listing) => (
-          <div className='box' key={listing.id}>
+        {Listings.map((listing, index) => (
+          <div className='box' key={`${listing.id}-${index}`}>
             <div className='admin'>
               <h3>{listing.alpha}</h3>
               <div>
@@ -33,7 +52,7 @@ const Flats = () => {
                 <span>{listing.type}</span>
                 <span>{listing.category}</span>
               </p>
-              <form action='' method='post' className='save'>
+              <form action='' method='post' className='save' id='flats-form'>
                 <button
                   type='submit'
                   title='save'
@@ -43,7 +62,7 @@ const Flats = () => {
                   Save
                 </button>
               </form>
-              <img src={listing.image} alt='Image of a House' />
+              <img src={listing.image} alt='Image of a Flat' />
             </div>
             <h3 className='name'>{listing.description}</h3>
             <p className='location'>
@@ -77,7 +96,7 @@ const Flats = () => {
       </div>
     </section>
     </>
-  )
-}
+  );
+};
 
 export default Flats;

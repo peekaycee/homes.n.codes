@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react' 
 import Listings from './HouseData'
 import '../../LatestListings/LatestListings.css'
 import { Link } from 'react-router-dom';
@@ -11,13 +12,31 @@ import { faMapMarkerAlt, faBed, faBath, faMaximize } from '@fortawesome/free-sol
 
 // eslint-disable-next-line react/prop-types
 const Houses = () => {
+  const [isLinkClicked, setIsLinkClicked] = useState(true);
+
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      const clickableLink = document.querySelector('#root > div.carousel-container > div > div > div:nth-child(3) > a');
+      if (clickableLink && clickableLink.contains(event.target)) {
+        setIsLinkClicked(false);
+      }
+    };
+
+    document.addEventListener('click', handleDocumentClick);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
+
   return (   
     <>
-    <h1>Available Houses</h1>
-    <section className='listings'>
+   {isLinkClicked && <h1>Available Houses</h1>}
+    <section className='house-listings'>
       <div className='box-container'>
-        {Listings.map((listing) => (
-          <div className='box' key={listing.id}>
+        {Listings.map((listing, index) => (
+          <div className='box' key={`${listing.id}-${index}`}>
             <div className='admin'>
               <h3>{listing.alpha}</h3>
               <div>
@@ -34,7 +53,7 @@ const Houses = () => {
                 <span>{listing.type}</span>
                 <span>{listing.category}</span>
               </p>
-              <form action='' method='post' className='save'>
+              <form action='' method='post' className='save' id='house-form'>
                 <button
                   type='submit'
                   title='save'

@@ -13,8 +13,8 @@ const LatestListings = () => {
     <section className='listings'>
       <h1 className='heading'>Latest Listings</h1>
       <div className='box-container'>
-        {Listings.map((listing) => (
-          <div className='box' key={listing.id}>
+        {Listings.map((listing, index) => (
+          <div className='box' key={`${listing.id}-${index}`}>
             <div className='admin'>
               <h3>{listing.alpha}</h3>
               <div>

@@ -1,3 +1,4 @@
+import {  useState, useEffect } from 'react';
 import Listings from './OutletData'
 import '../../LatestListings/LatestListings.css'
 import { Link } from 'react-router-dom';
@@ -8,14 +9,33 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import { faMapMarkerAlt, faBed, faBath, faMaximize } from '@fortawesome/free-solid-svg-icons';
 
+
+// eslint-disable-next-line react/prop-types
 const Outlets = () => {
-  return (
+  const [isLinkClicked, setIsLinkClicked] = useState(true);
+
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      const clickableLink = document.querySelector('#root > div.carousel-container > div > div > div:nth-child(7) > a');
+      if (clickableLink && clickableLink.contains(event.target)) {
+        setIsLinkClicked(false);
+      }
+    };
+
+    document.addEventListener('click', handleDocumentClick);
+
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
+
+  return (   
     <>
-    <h1>Available Outlets</h1>
-    <section className='listings'>
+    {isLinkClicked && <h1>Available Outlets</h1>}
+    <section className='Outlet-listings'>
       <div className='box-container'>
-        {Listings.map((listing) => (
-          <div className='box' key={listing.id}>
+        {Listings.map((listing, index) => (
+          <div className='box' key={`${listing.id}-${index}`}>
             <div className='admin'>
               <h3>{listing.alpha}</h3>
               <div>
@@ -32,7 +52,7 @@ const Outlets = () => {
                 <span>{listing.type}</span>
                 <span>{listing.category}</span>
               </p>
-              <form action='' method='post' className='save'>
+              <form action='' method='post' className='save' id='outlet-form'>
                 <button
                   type='submit'
                   title='save'
@@ -42,7 +62,7 @@ const Outlets = () => {
                   Save
                 </button>
               </form>
-              <img src={listing.image} alt='Image of a House' />
+              <img src={listing.image} alt='Image of a Outlets' />
             </div>
             <h3 className='name'>{listing.description}</h3>
             <p className='location'>
@@ -76,7 +96,7 @@ const Outlets = () => {
       </div>
     </section>
     </>
-  )
-}
+  );
+};
 
-export default Outlets
+export default Outlets;
