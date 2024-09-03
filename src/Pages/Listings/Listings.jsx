@@ -11,10 +11,17 @@ import {
   ViewProperty,
 } from '../../Components/common/index.common';
 import './Listings.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import Hero from '../../Components/Hero/Hero';
-import { CarReels, HouseReels, LandReels, OtherReels, Reels, ShopReels, ShortletReels } from '../../assets/videos/videos';
+import {
+  CarReels,
+  HouseReels,
+  LandReels,
+  OtherReels,
+  Reels,
+  ShopReels,
+  ShortletReels,
+} from '../../assets/videos/videos';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Listings = () => {
   const [activeComponent, setActiveComponent] = useState(null);
@@ -36,15 +43,11 @@ const Listings = () => {
   //   const ListHeader = document.querySelector('#root > div.listings > section.house-listings > section > h1');
   //   const viewAllBtn = document.querySelector('.inline-btn');
 
-
   //   if (ListHeader) ListHeader.style.display = 'none';
   //   if (viewAllBtn) viewAllBtn.style.display = 'none';
   // }, [activeComponent]);
 
   const handleSetActiveComponent = (componentName) => {
-
-    
-    
     setActiveComponent(componentName);
     if (componentName !== null) {
       const element = document.getElementById(`${componentName}-listings`);
@@ -52,7 +55,7 @@ const Listings = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-    restoreNavState();
+    // restoreNavState();
   };
 
   const scrollCarousel = (scrollOffset) => {
@@ -84,6 +87,7 @@ const Listings = () => {
       nav2.style.zIndex = '1';
     }
     if (header) {
+      header.style.opacity = '1';
       header.style.zIndex = '2';
     }
   };
@@ -98,6 +102,7 @@ const Listings = () => {
     }
     if (header) {
       header.style.zIndex = isScrolled ? '1' : '2';
+      header.style.opacity = isScrolled ? '0' : '1';
     }
 
     // const handleClickOutside = (event) => {
@@ -126,9 +131,9 @@ const Listings = () => {
           <div className='carousel-items'>
             <div className='navigation'>
               <button
-                className='nav-button-left'
+                className='nav-button left'
                 onClick={() => scrollCarousel(-300)}>
-                <FontAwesomeIcon icon={faAngleLeft} />
+                <FaChevronLeft />
               </button>
             </div>
             <div className='carousel-item'>
@@ -157,8 +162,10 @@ const Listings = () => {
               </Link>
             </div>
             <div className='carousel-item'>
-              <Link to='#' onClick={() => handleSetActiveComponent('Shortlets')}>
-              Shortlet
+              <Link
+                to='#'
+                onClick={() => handleSetActiveComponent('Shortlets')}>
+                Shortlet
               </Link>
             </div>
             <div className='carousel-item'>
@@ -173,9 +180,9 @@ const Listings = () => {
             </div>
             <div className='navigation right'>
               <button
-                className='nav-button-right'
+                className='nav-button right'
                 onClick={() => scrollCarousel(300)}>
-                <FontAwesomeIcon icon={faAngleRight} />
+                <FaChevronRight />
               </button>
             </div>
           </div>
@@ -184,9 +191,13 @@ const Listings = () => {
       <div className='listings'>
         {activeComponent === null && (
           <>
-            <Hero variant={'Top Level'} search={'seach by property Type'} reels={Reels}/>
+            <Hero
+              variant={'Top Level'}
+              search={'seach by property Type'}
+              reels={Reels}
+            />
             <Lands />
-            <Houses/>
+            <Houses />
             <Flats />
             <Cars />
             <Shops />
@@ -195,21 +206,93 @@ const Listings = () => {
             <ViewProperty />
           </>
         )}
-       {activeComponent === 'Lands' && (<><Hero variant={'Land Properties'} search={'seach by land types'} reels={LandReels}/> <Lands/></>)}
-        {activeComponent === 'Houses' && (<><Hero variant={'Housing Properties'} search={'seach by house types'} reels={HouseReels} /><Houses/></>)}
-        {activeComponent === 'Flats' && (<><Hero variant={'Flats and Rented Properties'} search={'seach by flat types'} reels={Reels}/><Flats /></>)}
-        {activeComponent === 'Cars' && (<><Hero variant={'Cars for Purchase'} search={'seach by car types'} reels={CarReels}/><Cars /></>)}
-        {activeComponent === 'Shops' && (<><Hero variant={'Rent Your Shops'} search={'seach by shop types'} reels={ShopReels}/><Shops /></>)}
-        {activeComponent === 'Shortlets' && (<><Hero  variant={'Shortlet Locations'} search={'seach by shortlet locations'} reels={ShortletReels}/><Shortlets /></>)}
-        {activeComponent === 'Others' && (<><Hero variant={'Other Properties You May Need'} search={'seach other types of properties'} reels={OtherReels} /><Others /></>)}
+        {activeComponent === 'Lands' && (
+          <>
+            <Hero
+              variant={'Land Properties'}
+              search={'seach by land types'}
+              reels={LandReels}
+            />{' '}
+            <Lands />
+          </>
+        )}
+        {activeComponent === 'Houses' && (
+          <>
+            <Hero
+              variant={'Housing Properties'}
+              search={'seach by house types'}
+              reels={HouseReels}
+            />
+            <Houses />
+          </>
+        )}
+        {activeComponent === 'Flats' && (
+          <>
+            <Hero
+              variant={'Flats and Rented Properties'}
+              search={'seach by flat types'}
+              reels={Reels}
+            />
+            <Flats />
+          </>
+        )}
+        {activeComponent === 'Cars' && (
+          <>
+            <Hero
+              variant={'Cars for Purchase'}
+              search={'seach by car types'}
+              reels={CarReels}
+            />
+            <Cars />
+          </>
+        )}
+        {activeComponent === 'Shops' && (
+          <>
+            <Hero
+              variant={'Rent Your Shops'}
+              search={'seach by shop types'}
+              reels={ShopReels}
+            />
+            <Shops />
+          </>
+        )}
+        {activeComponent === 'Shortlets' && (
+          <>
+            <Hero
+              variant={'Shortlet Locations'}
+              search={'seach by shortlet locations'}
+              reels={ShortletReels}
+            />
+            <Shortlets />
+          </>
+        )}
+        {activeComponent === 'Others' && (
+          <>
+            <Hero
+              variant={'Other Properties You May Need'}
+              search={'seach other types of properties'}
+              reels={OtherReels}
+            />
+            <Others />
+          </>
+        )}
         {activeComponent === 'ViewProperty' && <ViewProperty />}
       </div>
       <div className='bottom-navigation'>
-        <button
-          className='view-all'
-          onClick={() => handleSetActiveComponent(null)}>
-          View All
-        </button>
+        {(activeComponent === 'Lands' ||
+          activeComponent === 'Houses' ||
+          activeComponent === 'Flats' ||
+          activeComponent === 'Cars' ||
+          activeComponent === 'Shops' ||
+          activeComponent === 'Shortlets' ||
+          activeComponent === 'Others' ||
+          activeComponent === 'ViewProperty') && (
+          <button
+            className='view-all'
+            onClick={() => handleSetActiveComponent(null)}>
+            View All
+          </button>
+        )}
       </div>
     </>
   );

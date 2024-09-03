@@ -30,13 +30,16 @@
  }
  
  .header .navbar .flex .logo{
+   display: flex;
+   align-items: center;
+   justify-content: center;
     font-size: 2.2rem;
     color: var(--white); 
  }
  
- .header .navbar .flex .logo i{
-    color: var(--main-color);
-    margin-right: 1rem;
+ .header .navbar .flex .logo .home-icon{
+    color: var(--white);
+    margin-right: 5px;
  }
  
  .header .navbar .flex ul{
@@ -50,7 +53,7 @@
     border-radius: 5px;
  }
  .nav-2 {
-   transition: opacity 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
    display: block;
  }
  .header .navbar .flex ul li a{
@@ -63,8 +66,15 @@
     background-color: var(--white);
     transition: all .2s ease;
  }
- .header .navbar .flex .post {
+ .header .navbar .flex .dashboard {
    border-radius: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .header .navbar .flex .dashboard svg{
+  margin-left: 10px;
  }
  
  .header .navbar .flex ul li a:hover{

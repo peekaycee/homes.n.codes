@@ -1,12 +1,25 @@
 import { AboutImage, Step1, Step2, Step3 } from '../../assets/images/index.img';
 import './About.css';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import reviews  from './reviewData.js';
+import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 
 const About = () => {
-  
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [location]);
+
+
   return (
     <>
       <section className='about'>
@@ -68,11 +81,11 @@ const About = () => {
                 <div>
                   <h3>{review.name}</h3>
                   <div className='stars'>
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStarHalfAlt} />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStarHalfAlt />
                   </div>
                 </div>
               </div>

@@ -1,6 +1,14 @@
 import './FeedbackForm.css';
+import { useRef, useEffect } from 'react';
 
 const FeedbackForm = () => {
+
+  const inputRef = useRef(null);
+
+  useEffect(()=> {
+    inputRef.current.focus();
+  }, [])
+
   return (
     <>
       <form action='search.html' method='post'>
@@ -8,6 +16,7 @@ const FeedbackForm = () => {
         <div className='box'>
           <p>Enter Location</p>
           <input
+          ref={inputRef}
             type='text'
             name='location'
             required

@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import Listings from './HouseData';
 import '../../LatestListings/LatestListings.css';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faImage, faHeart } from '@fortawesome/free-regular-svg-icons';
 import {
-  faMapMarkerAlt,
-  faBed,
-  faBath,
-  faMaximize,
-} from '@fortawesome/free-solid-svg-icons';
+  FaBath,
+  FaBed,
+  FaRegHeart,
+  FaImage,
+  FaMapMarkerAlt,
+  FaExpand,
+} from 'react-icons/fa';
 
 // eslint-disable-next-line react/prop-types
 const Houses = () => {
@@ -49,10 +49,7 @@ const Houses = () => {
               </div>
               <div className='thumb'>
                 <p className='total-images'>
-                  <FontAwesomeIcon
-                    icon={faImage}
-                    className='regular-icon icon'
-                  />
+                  <FaImage className='regular-icon icon' />
                   <span>{listing.totalNumberOfImages}</span>
                 </p>
                 <p className='type'>
@@ -65,10 +62,7 @@ const Houses = () => {
                     title='save'
                     name='save'
                     className='faHeart'>
-                    <FontAwesomeIcon
-                      icon={faHeart}
-                      className='regular-icon icon'
-                    />
+                    <FaRegHeart className='regular-icon icon' />
                     Save
                   </button>
                 </form>
@@ -76,20 +70,20 @@ const Houses = () => {
               </div>
               <h3 className='name'>{listing.description}</h3>
               <p className='location'>
-                <FontAwesomeIcon icon={faMapMarkerAlt} className='solid-icon' />
+                <FaMapMarkerAlt className='solid-icon' />
                 <span>{listing.location}</span>
               </p>
               <div className='flex'>
                 <p>
-                  <FontAwesomeIcon icon={faBed} className='solid-icon' />
+                  <FaBed className='solid-icon' />
                   <span>{listing.numberOfBedrooms}</span>
                 </p>
                 <p>
-                  <FontAwesomeIcon icon={faBath} className='solid-icon' />
+                  <FaBath className='solid-icon' />
                   <span>{listing.numberOfBathrooms}</span>
                 </p>
                 <p>
-                  <FontAwesomeIcon icon={faMaximize} className='solid-icon' />
+                  <FaExpand className='solid-icon' />
                   <span>{listing.size}sqft</span>
                 </p>
               </div>

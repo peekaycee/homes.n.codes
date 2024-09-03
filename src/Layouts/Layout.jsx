@@ -4,7 +4,7 @@ import Header from './../Components/Header/Header';
 const Layout = () => {
   return (
     <>
-      <Header />
+      <Header  id='top'/>
     </>
   )
 }

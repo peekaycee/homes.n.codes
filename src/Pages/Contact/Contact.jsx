@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { ContactImage } from '../../assets/images/index.img';
 import './Contact.css';
@@ -7,6 +7,11 @@ import faqData from './FaqData';
 const Contact = () => {
   // Initialize state for active FAQ boxes
   const [activeIndex, setActiveIndex] = useState(null);
+  const inputRef = useRef(null);
+
+  useEffect(()=>{
+    inputRef.current.focus();
+  })
 
   // Handle click on FAQ heading
   const handleHeadingClick = (index) => {
@@ -20,8 +25,11 @@ const Contact = () => {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [location]);
+
   return (
     <>
       <section className='contact' id='top-section'>
@@ -35,6 +43,7 @@ const Contact = () => {
           <form action='' method='post'>
             <h3>get in touch</h3>
             <input
+             ref={inputRef}
               type='text'
               name='name'
               required
@@ -79,9 +88,7 @@ const Contact = () => {
       </section>
 
       <section className='faq' id='faq'>
-        <h1 className='heading'>
-          FAQ
-        </h1>
+        <h1 className='heading'>FAQ</h1>
         <div className='box-container'>
           {faqData.map((faq, index) => (
             <div

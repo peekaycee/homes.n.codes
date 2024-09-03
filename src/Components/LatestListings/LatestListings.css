@@ -81,7 +81,7 @@ section.listings{
  }
 
  .listings .box-container .box .thumb .total-images .icon{
-    margin-right: .7rem;
+   margin-right: .7rem;
  }
  .svg-inline--fa{
    margin-right: 3px;
@@ -108,12 +108,19 @@ section.listings{
     z-index: 0;
  }
  
- .listings .box-container .box .thumb .save{
+ .listings .box-container .box .thumb .save {
     position: absolute;
     top: 1rem; right: 1rem;
     z-index: 1;
- }
- 
+   }
+   .listings .box-container .box .thumb .save .icon {
+   margin-right: 3px;
+}
+div.flex > p {
+   display: flex;
+   align-items: center;
+}
+
  .listings .box-container .box .thumb .save button{
     background-color: rgba(0,0,0,.3);
     color: var(--white);
@@ -166,11 +173,6 @@ section.listings{
  
  .listings .box-container .box .flex p span{
     color: var(--light-color);
- }
- 
- .listings .box-container .box .flex p i{
-    margin-right: 1rem;
-    color: var(--main-color);
  }
 
  /* @media only screen and (max-width: 768px) {

@@ -6,6 +6,7 @@ import { SearchIcon } from '../../assets/images/index.img';
 const Hero = ({ variant, search, reels }) => {
   const videoRef = useRef(null);
   const [searchValue, setSearchValue] = useState('');
+  const inputRef = useRef(null);
   
   const handleSearchInput = (e) => {
   setSearchValue(e.target.value);
@@ -18,6 +19,7 @@ const Hero = ({ variant, search, reels }) => {
         video.play();
       });
     }
+    inputRef.current.focus();
   }, []);
 
   return (
@@ -31,6 +33,7 @@ const Hero = ({ variant, search, reels }) => {
         <div className='search'>
           <img src={SearchIcon} alt='' />
           <input
+          ref={inputRef}
             type='text'
             placeholder={search}
             id='hero-text'
