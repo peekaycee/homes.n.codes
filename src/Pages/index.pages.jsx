@@ -6,4 +6,5 @@ export {default as Login } from './RegisterLogin/Login'
 export {default as Register } from './RegisterLogin/Register'
 export {default as SavedProperties } from './SavedProperties/SavedProperties'
 export {default as ViewProperties } from '../Components/common/ViewProperties/ViewProperty'
+export {default as Faq } from './FAQ/Faq'
 

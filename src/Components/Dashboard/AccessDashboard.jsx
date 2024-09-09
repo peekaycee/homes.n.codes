@@ -3,26 +3,26 @@ import { useState, useRef, useEffect } from 'react';
 import './Dashboard.css';
 
 const AccessDashboard = () => {
-    const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState('');
   const adminPassword = 'admin01';
   const userPassword = 'user123';
   const navigate = useNavigate();
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
 
-  useEffect(()=>{
-    inputRef.current.focus()
-  }, [])
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(inputValue === adminPassword){
-        navigate('/admin-dashboard')
-    } else if(inputValue === userPassword){
-        navigate('/user-dashboard')
-    } else if(inputValue === ''){
-        alert("Please enter your password")
+    if (inputValue === adminPassword) {
+      navigate('/admin-dashboard');
+    } else if (inputValue === userPassword) {
+      navigate('/user-dashboard');
+    } else if (inputValue === '') {
+      alert('Please enter your password');
     } else {
-        alert("Invalid password")
+      alert('Invalid password');
     }
   };
 

@@ -9,6 +9,7 @@ import {
   Login,
   Register,
   SavedProperties,
+  Faq,
 } from './Pages/index.pages';
 import Footer from './Components/Footer/Footer';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
@@ -38,6 +39,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/faq" element={<Faq/>} />
         <Route path="/sell-property" element={<SellProperty />} />
         <Route path="/listings" element={<Listings />}>
           <Route path="houses" element={<Houses />} />

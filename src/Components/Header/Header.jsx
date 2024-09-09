@@ -113,7 +113,7 @@ const Header = () => {
                     <Link to='contact'>contact us</Link>
                   </li>
                   <li>
-                    <Link to='contact#faq'>FAQ</Link>
+                    <Link to='faq'>FAQ</Link>
                   </li>
                 </ul>
               </li>

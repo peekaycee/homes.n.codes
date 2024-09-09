@@ -58,4 +58,9 @@
     font-weight: bold;
     color: var(--white);
     cursor: pointer;
+    transition: background-color .15s ease;
+}
+
+.access-dashboard-container button:hover {
+    background-color: var(--black);
 }
